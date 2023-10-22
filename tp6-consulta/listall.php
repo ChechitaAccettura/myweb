@@ -68,8 +68,8 @@
 
         <footer class="container-fluid">
             <ul>
-                <li class="dropdown-item"><i class="fa-brands fa-github"> </i> Cecilia Accettura</li>
-                <li class="dropdown-item"> <i class="fa-solid fa-chalkboard-user"> </i>Potrero Digital</li>
+                <a target="_blank" class="dropdown-item icon-link-hover" href="https://github.com/ChechitaAccettura/myweb"> <i class="fa-brands fa-github"> </i> Cecilia Accettura </a>
+                <a target="_blank" class="dropdown-item icon-link-hover" href="https://plataforma.potrerodigital.org/panel/alumno"><i class="fa-solid fa-chalkboard-user"> </i>Potrero Digital</a>
                 <li class="dropdown-item"><i class="fa-regular fa-registered"></i> Todos los derechos reservados</li>
             </ul>
         </footer>
