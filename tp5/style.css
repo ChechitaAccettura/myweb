@@ -1,0 +1,24 @@
+body {
+    background: linear-gradient(45deg, white 0%, rgb(120, 131, 228) 85%, rgb(52, 5, 112) 90%, rgb(255, 6, 255) 95%, rgb(160, 1, 160) 100%);
+    box-sizing: border-box;
+}
+
+.image {
+    margin-left: 25%;
+    border-radius: 15px;
+    box-shadow: 1px 1px 1px black;
+}
+
+.title {
+    text-shadow: 1px 1px 1px white;
+}
+
+.col {
+    margin: 15px;
+    padding: 10px;
+}
+
+.subtitle {
+    color: rgb(54, 56, 58);
+}
+

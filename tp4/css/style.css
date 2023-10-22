@@ -1,0 +1,19 @@
+.accordion-button{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgb(159, 155, 240) 0%, rgb(168, 67, 194) 12%, rgb(203, 226, 197) 100%);
+}
+
+.accordion-button:hover{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgb(203, 226, 197) 0%, rgb(168, 67, 194) 12%,  rgb(159, 155, 240) 100%);
+}
+
+header{
+    background: linear-gradient(180deg, rgb(240, 203, 234) 0%,  rgb(188, 232, 238) 90%,  rgb(250, 72, 223) 100%);
+    display: flex;
+    align-items: flex-end;
+}
+
+h1 {
+    color: rgb(49, 49, 49);
+}
