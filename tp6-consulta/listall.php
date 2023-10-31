@@ -30,6 +30,7 @@
         <th>TALLE</th>
         <th>PRECIO</th>
         <th></th>
+        <th></th>
     </tr>
     <?php
     // 1) Conexion
@@ -60,6 +61,7 @@
         <td><?php echo $registro['talle']; ?></td>
         <td><?php echo '$'. $registro['precio']; ?></td>
         <td><img class="img-thumbnail rounded mx-auto d-block" src="data:image/jpg;base64, <?php echo base64_encode($registro['imagen'])?>" alt="" width="200px" height="200px"> </td>
+        <td> <img class="img-thumbnail rounded mx-auto d-block" src="<?php echo $registro['imagen2']; ?>" alt="otraImagen"  width="200px" height="200px"> </td>
         </tr>
     <?php } ?>
     </table>
