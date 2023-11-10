@@ -9,7 +9,7 @@
     <title>Tienda Accettura</title>
 </head>
 <body>
-    <h1>Tu próximo outfit</h1>
+    <h1 class="col">Tu próximo outfit</h1>
 
     <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">

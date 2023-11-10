@@ -48,22 +48,22 @@
   
 while ($registro=mysqli_fetch_array($datos)) { ?>
 
-<div class="card mb-3" style="width: 540px;">
+<div class="card mb-3" style="width: 420px;">
       <div class="row g-0">
         <div class="col-md-4">
         <img  class="img-fluid" src="data:image/png;base64,<?php echo base64_encode($registro['imagen'])?>" alt="img" width="250px" height="250px">
         </div>
-        <div class="col-md-6">
+        <div class="col-md-5">
           <div class="card-body">
             <h5 class="card-title"><?php echo $registro['prenda']; ?></h5>
-            <p class="card-text"><?php echo "Código de producto:" . $registro['id']; ?></p>
+            <p class="card-text"><?php echo "Código de producto:  " . $registro['id']; ?></p>
             <p class="card-text"><small class="text-body-secondary"><?php echo $registro['marca']; ?></small></p>
             <p class="card-text"><small class="text-body-secondary"><?php echo $registro['talle']; ?></small></p>
             <h5 class="card-title"><?php echo '$' . $registro['precio']; ?></h5>
             
           </div>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-3">
         <a type="submit" class="btn btn-danger" href="borrar.php?id=<?php echo $registro['id'];?>">Borrar</a>
         <a type="submit" class="btn btn-info" href="modificar.php?id=<?php echo $registro['id'];?>">Modificar</a>
 

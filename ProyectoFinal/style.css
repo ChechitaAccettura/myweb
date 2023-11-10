@@ -1,0 +1,89 @@
+:root {
+    box-sizing: border-box;
+    color: rgb(39, 39, 39);
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
+}
+
+body {
+    background-color: rgb(240, 224, 204);
+}
+
+header, footer {
+    background: linear-gradient(90deg, rgb(238, 255, 0) 2%, rgb(248, 255, 146) 7%, rgb(248, 255, 146) 92%, rgb(255, 238, 0) 100%) ;
+}
+
+.header_2 {
+    background: linear-gradient(90deg, rgb(238, 255, 0) 2%, rgb(248, 255, 146) 7%, rgb(248, 255, 146) 92%, rgb(255, 238, 0) 100%) ;
+    width: 100%;
+    padding-bottom: 15px;
+}
+
+.carousel {
+    padding-top: 15px;
+}
+
+.imagenCarousel {
+    height: 70px;
+}
+
+.carousel-item {
+    align-items: center;
+}
+
+
+.img-fluid {
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px darkblue;
+    margin: 5px
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    margin: 5px;
+}
+
+.btn {
+    margin-left: -27px;
+    margin-top: 5px;
+    width: 100%;
+    align-self: start;
+
+}
+
+.card-title:first-letter, .card-text:first-letter {
+    text-transform: uppercase;
+}
+
+
+.nav-link:hover, .dropdown-item:hover{
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px white;
+    background: linear-gradient(135deg, rgb(240, 168, 60) 15%, rgb(252, 250, 129) 25%, rgb(253, 149, 149) 100%);
+    font-weight: bold;
+}
+
+.headerP {
+    font-size: 30px;
+    margin-left: 30%;
+    color: rgb(39, 39, 39);
+}
+
+footer {
+    height: 100px;
+}
+
+/* Media media media */
+@media (max-width: 610px) {
+    .headerP {
+        font-size: 15px;
+    }
+    .imagenCarousel {
+        height: 40px;
+    }
+    
+}
