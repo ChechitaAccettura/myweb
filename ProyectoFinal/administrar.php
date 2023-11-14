@@ -72,7 +72,7 @@
                     <a class="nav-link" href="/myweb/ProyectoFinal/accesorios.php">Accesorios</a>
                 </li>
                 <li class="nav-item justify-content-md-end">
-                    <a href="login.html" class="nav-link" type="button">Acceso a Administradores</a>
+                    <a href="administrar.php" class="nav-link" type="button">Acceso a Administradores</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -93,6 +93,7 @@
 
 <div class="container-fluid header_2">
     <h3> Modificá tus productos aquí <i class="fa-solid fa-floppy-disk"></i></h3>
+    <a class="nav-link" href="agregar.html">Agregar Productos</a>
 </div>
 
 <div class="container"> 
@@ -110,7 +111,7 @@ while ($registro=mysqli_fetch_array($datos)) { ?>
             <h5 class="card-title"><?php echo $registro['producto']; ?></h5>
             <p class="card-text"><?php echo "Código de producto:  " . $registro['id']; ?></p>
             <p class="card-text"><small class="text-body-secondary"><?php echo $registro['categoria']; ?></small></p>
-            <p class="card-text"><small class="text-body-secondary"><?php echo "Tamaños disponibles: " . $registro['size']; ?></small></p>
+            <p class="card-text"><small class="text-body-secondary"><?php echo "Tamaños disponibles: " . $registro['size_']; ?></small></p>
             <h5 class="card-title"><?php echo '$' . $registro['precio']; ?></h5>
             
           </div>

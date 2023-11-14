@@ -21,3 +21,5 @@ $consulta = "DELETE FROM tiendagabita WHERE id=$id";
 // a) rederigir a index
 mysqli_query($conexion, $consulta);
 header("location:index.php");
+
+?>

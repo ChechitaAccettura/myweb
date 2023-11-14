@@ -1,20 +1,3 @@
-<?php
-$conexion=mysqli_connect("127.0.0.1", "root", "");
-mysqli_select_db($conexion, "gabitas");
-$id=$_GET["id"];
-
-$consulta="SELECT * FROM tiendagabita WHERE id=$id";
-$respuesta=mysqli_query($conexion, $consulta);
-
-$datos=mysqli_fetch_array($respuesta);
-$producto=$datos['producto'];
-$categoria=$datos['categoria'];
-$size_=$datos['size_'];
-$precio=$datos['precio'];
-$imagen_1=$datos['imagen_1'];
-
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -25,7 +8,7 @@ $imagen_1=$datos['imagen_1'];
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="icon" href="assets/castle.svg">
-    <title>Gabita's Modifica Producto</title>
+    <title>Gabita's Ingresar Producto</title>
 </head>
 <body>
 
@@ -98,47 +81,37 @@ $imagen_1=$datos['imagen_1'];
 </header>
 
 <div class="container-fluid header_2">
-    <h3>Ingresá los nuevos datos del producto <i class="fa-solid fa-wrench"></i></h3>
+    <h3>Ingresá los datos del producto nuevo<i class="fa-solid fa-file-circle-plus"></i></h3>
 </div>
 
-<h5>Producto: <?php echo $id ?></h5>
+<h5>Producto:</h5>
 
-<form action="" method="post" enctype="multipart/form-data">
+<form action="agregar.php" method="post" enctype="multipart/form-data">
 
 <label> Producto</label>
-<input type="text" name="producto" placeholder="Producto" value="<?php echo $producto ?>">
+<input type="text" name="producto" placeholder="Producto" required>
 
 <label> Categoría</label>
-<input type="text" name="categoria" placeholder="Categoría" value="<?php echo $categoria ?>">
+<input type="text" name="categoria" placeholder="Categoría" required>
 
 <label> Tamaños disponibles</label>
-<input type="text" name="size_" placeholder="Tamaño" value="<?php echo $size_ ?>">
+<input type="text" name="size_" placeholder="Tamaño" required>
 
 <label> Precio</label>
-<input type="text" name="precio" placeholder="Precio" value="<?php echo $precio ?>">
-<!-- este no se va a mostrar por ahora
+<input type="text" name="precio" placeholder="Precio" required>
+
 <label> Imagen</label>
-<input type="file" name="imagen_1"> 
--->
-<button type="submit" name="guardarCambios"> Guardar Cambios </button>
+<input type="file" name="imagen_1" placeholder="Imagen" required> 
+
+<label> Imagen 2</label>
+<input type="file" name="imagen_2" placeholder="Imagen" required> 
+
+<button type="submit" name="guardarProducto"> Guardar Cambios </button>
 
 <button type="submit" name="cancelar" formaction="administrar.php"> Cancelar </button>
 
 
 </form>
-
-<?php
-if(array_key_exists('guardarCambios', $_POST)) {
-    $producto = $_POST['producto'];
-    $categoria = $_POST['categoria'];
-    $size_ = $_POST['size_'];
-    $precio = $_POST['precio'];
-
-    $consulta = "UPDATE tiendagabita SET producto='$producto', categoria= '$categoria', size_= '$size_', precio= '$precio' WHERE id='$id'";
-    mysqli_query($conexion, $consulta);
-
-    echo '<script>location.replace("administrar.php"); </script>';
-} ?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body> 
