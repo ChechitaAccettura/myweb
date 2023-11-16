@@ -1,3 +1,25 @@
+<?php
+session_start();
+if (isset($_SESSION['usuario'])) {
+    $usuario = $_SESSION['usuario'];
+} else {
+    header ('location:login.html');
+}
+    // Establecer tiempo de vida de la sesión en segundos
+    $inactividad = 600;
+    // Comprobar si $_SESSION["timeout"] está establecida
+    if(isset($_SESSION["timeout"])){
+        // Calcular el tiempo de vida de la sesión (TTL = Time To Live)
+        $sessionTTL = time() - $_SESSION["timeout"];
+        if($sessionTTL > $inactividad){
+            session_destroy();
+            header("Location:login.html");
+        }
+    }
+    // El siguiente key se crea cuando se inicia sesión
+    $_SESSION["timeout"] = time();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -42,14 +64,7 @@
             <p class="headerP"> <img class="imagenCarousel" src="assets/bolso.png" alt="bolso"> Accesorios </p>
         </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
+ 
 </div>
 
 <nav class="navbar navbar-expand-lg">
@@ -63,25 +78,20 @@
                     <a class="nav-link" aria-current="page" href="index.php">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/myweb/ProyectoFinal/amigurumis.php">Amigurumis</a>
+                    <a class="nav-link" href="amigurumis.php">Amigurumis</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/myweb/ProyectoFinal/prendas.php">Prendas</a>
+                    <a class="nav-link" href="prendas.php">Prendas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/myweb/ProyectoFinal/accesorios.php">Accesorios</a>
-                </li>
-                <li class="nav-item justify-content-md-end">
-                    <a href="administrar.php" class="nav-link" type="button">Acceso a Administradores</a>
+                    <a class="nav-link" href="accesorios.php">Accesorios</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Más
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Videos</a></li>
-                        <li><a class="dropdown-item" href="#">Suscribirse</a></li>
-                        
+                        <li><a href="login.html" class="dropdown-item" target="_blank" type="button">Acceso a Administradores</a></li>
                     </ul>
                 </li>
             </ul>
@@ -92,13 +102,12 @@
 </header>
 
 <div class="container-fluid header_2">
-    <h3> Modificá tus productos aquí <i class="fa-solid fa-floppy-disk"></i></h3>
-    <a class="nav-link" href="agregar.html">Agregar Productos</a>
+    <h5> Modificá tus productos aquí <i class="fa-solid fa-floppy-disk"></i></h5>
 </div>
 
 <div class="container"> 
     <?php
-  
+
 while ($registro=mysqli_fetch_array($datos)) { ?>
 
 <div class="card mb-3" style="width: 420px;">
@@ -111,14 +120,13 @@ while ($registro=mysqli_fetch_array($datos)) { ?>
             <h5 class="card-title"><?php echo $registro['producto']; ?></h5>
             <p class="card-text"><?php echo "Código de producto:  " . $registro['id']; ?></p>
             <p class="card-text"><small class="text-body-secondary"><?php echo $registro['categoria']; ?></small></p>
-            <p class="card-text"><small class="text-body-secondary"><?php echo "Tamaños disponibles: " . $registro['size_']; ?></small></p>
+            <p class="card-text"><small class="text-body-secondary"><?php echo "Tamaño: " . $registro['size_']; ?></small></p>
             <h5 class="card-title"><?php echo '$' . $registro['precio']; ?></h5>
-            
-          </div>
+            </div>
         </div>
         <div class="col-md-3">
-            <a type="submit" class="btn btn-danger" href="borrar.php?id=<?php echo $registro['id'];?>">Borrar</a>
-            <a type="submit" class="btn btn-info" href="modificar.php?id=<?php echo $registro['id'];?>">Modificar</a>
+            <a type="submit" class="btn btn-danger modifica" href="borrar.php?id=<?php echo $registro['id'];?>">Borrar</a>
+            <a type="submit" class="btn btn-info modifica" href="modificar.php?id=<?php echo $registro['id'];?>">Modificar</a>
         </div>
       </div>
     </div>

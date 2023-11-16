@@ -6,15 +6,18 @@
 }
 
 body {
-    background-color: rgb(240, 224, 204);
+    background-color:  #daaeae;
 }
 
 header, footer {
-    background: linear-gradient(90deg, rgb(238, 255, 0) 2%, rgb(248, 255, 146) 7%, rgb(248, 255, 146) 92%, rgb(255, 238, 0) 100%) ;
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwCymFsoaPMYS1jHOKRRQhtX3reE5J6jq5PA&usqp=CAU);
+    background-size: cover;
+
 }
 
 .header_2 {
-    background: linear-gradient(90deg, rgb(238, 255, 0) 2%, rgb(248, 255, 146) 7%, rgb(248, 255, 146) 92%, rgb(255, 238, 0) 100%) ;
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwCymFsoaPMYS1jHOKRRQhtX3reE5J6jq5PA&usqp=CAU);
+    background-size: cover;
     width: 100%;
     padding-bottom: 15px;
 }
@@ -33,9 +36,13 @@ header, footer {
 
 
 .img-fluid {
+    position: relative;
     border-radius: 5px;
-    box-shadow: 1px 1px 1px darkblue;
-    margin: 5px
+    box-shadow: 3px 3px 3px rgb(104, 104, 104);
+    margin: 5px;
+    align-self: center;
+    justify-self: center;
+    object-fit: cover
 }
 
 .container{
@@ -45,20 +52,33 @@ header, footer {
 
 .card {
     margin: 5px;
+    background: url(https://t3.ftcdn.net/jpg/04/12/82/16/360_F_412821610_95RpjzPXCE2LiWGVShIUCGJSktkJQh6P.jpg);
+    background-size: cover;
+}
+
+.card:hover{
+    transform: scale(0.9);
+    transition: transform 0.9s ease;
+    border: solid #daaeae;
+
+}
+
+.what:hover {
+    transform: scale(0.9);
+    transition: transform 0.9s ease;
 }
 
 .btn {
-    margin-left: -27px;
-    margin-top: 5px;
+
+    margin: 5px;
     width: 100%;
-    align-self: start;
+    align-self: center;
+    justify-self: center;
 
 }
 
-.btn-retro{
-    background-color: lightgoldenrodyellow;
-    border-radius: 3px;
-    
+.modifica {
+    margin-left: -35px;
 }
 
 .card-title:first-letter, .card-text:first-letter {
@@ -66,10 +86,13 @@ header, footer {
 }
 
 
-.nav-link:hover, .dropdown-item:hover, .btn-retro{
+.nav-link:hover, .dropdown-item:hover{
+    transform: scale(0.9);
+    transition: transform 0.9s ease;
+    border: solid #daaeae;
     border-radius: 5px;
     box-shadow: 1px 1px 1px white;
-    background: linear-gradient(135deg, rgb(240, 168, 60) 15%, rgb(252, 250, 129) 25%, rgb(253, 149, 149) 100%);
+    text-shadow: 2px 2px 2px white;
     font-weight: bold;
 }
 
@@ -77,6 +100,10 @@ header, footer {
     font-size: 30px;
     margin-left: 30%;
     color: rgb(39, 39, 39);
+}
+
+footer {
+    height: fit-content;
 }
 
 .what {
@@ -87,13 +114,21 @@ header, footer {
 
 #what_img {
     width: 70px;
-    box-shadow: 2px 2px 2px black
 }
 
-.footerIcon {
-    width: 50px;
-    height: 50px;
-    
+.footericon{
+    font-size: 40px;
+    color: rgba(50, 52, 54, 0.822);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.788);
+    margin: 20px;
+    align-self: center;
+}
+
+.footericon:hover {
+    font-size:41px;
+    color: black;
+    font-weight: bolder;
+    text-shadow: white;
 }
 
 /*        ------ LOGIN ------- */
@@ -197,6 +232,15 @@ header, footer {
 
 
 /* Media media media */
+
+@media (max-width: 770px) {
+
+    .modifica {
+        margin: 0px;
+    }
+    
+}
+
 @media (max-width: 610px) {
     .headerP {
         font-size: 15px;
@@ -206,12 +250,11 @@ header, footer {
     }
     .what {
         position: fixed;
-        bottom: 3px;
-        right: 3px;
-        width: 30px;
-        box-shadow: 2px 2px 2px black;
-        border: 1px solid black;
-    
+        bottom: 3%;
+        right: 3%;
     }
-    
+    #what_img {
+        width: 50px;
+    }
+
 }

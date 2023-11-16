@@ -48,14 +48,6 @@ $imagen_1=$datos['imagen_1'];
             <p class="headerP"> <img class="imagenCarousel" src="assets/bolso.png" alt="bolso"> Accesorios </p>
         </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
 </div>
 
 <nav class="navbar navbar-expand-lg">
@@ -69,25 +61,20 @@ $imagen_1=$datos['imagen_1'];
                     <a class="nav-link" aria-current="page" href="index.php">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/myweb/ProyectoFinal/amigurumis.php">Amigurumis</a>
+                    <a class="nav-link" href="amigurumis.php">Amigurumis</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/myweb/ProyectoFinal/prendas.php">Prendas</a>
+                    <a class="nav-link" href="prendas.php">Prendas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/myweb/ProyectoFinal/accesorios.php">Accesorios</a>
-                </li>
-                <li class="nav-item justify-content-md-end">
-                    <a href="administrar.php" class="nav-link" type="button">Acceso a Administradores</a>
+                    <a class="nav-link" href="accesorios.php">Accesorios</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Más
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Videos</a></li>
-                        <li><a class="dropdown-item" href="#">Suscribirse</a></li>
-                        
+                        <li><a href="login.html" class="dropdown-item" target="_blank" type="button">Acceso a Administradores</a></li>
                     </ul>
                 </li>
             </ul>
@@ -97,35 +84,75 @@ $imagen_1=$datos['imagen_1'];
 
 </header>
 
+
 <div class="container-fluid header_2">
     <h3>Ingresá los nuevos datos del producto <i class="fa-solid fa-wrench"></i></h3>
 </div>
 
+<div class="row">
+<div class="container-fluid row gap-3"> 
+
+    <div class="col"> </div>
+    <div class="col ">
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                <img src="assets/feria1.jpg" class="d-block w-100" alt="feria">
+                </div>
+                <div class="carousel-item">
+                <img src="assets/feria3.jpg" class="d-block w-100" alt="feria">
+                </div>
+                <div class="carousel-item">
+                <img src="assets/feria4.jpg" class="d-block w-100" alt="feria">
+                </div>
+            </div>
+
+            </div>
+    </div>
+
+    <div class="col ">
+
 <h5>Producto: <?php echo $id ?></h5>
 
 <form action="" method="post" enctype="multipart/form-data">
-
+<div class="row g-sm-2">
 <label> Producto</label>
 <input type="text" name="producto" placeholder="Producto" value="<?php echo $producto ?>">
+</div>
 
+<div class="row g-sm-2">
 <label> Categoría</label>
 <input type="text" name="categoria" placeholder="Categoría" value="<?php echo $categoria ?>">
+</div>
 
+<div class="row g-sm-2">
 <label> Tamaños disponibles</label>
 <input type="text" name="size_" placeholder="Tamaño" value="<?php echo $size_ ?>">
+</div>
 
+<div class="row g-sm-2">
 <label> Precio</label>
 <input type="text" name="precio" placeholder="Precio" value="<?php echo $precio ?>">
 <!-- este no se va a mostrar por ahora
 <label> Imagen</label>
 <input type="file" name="imagen_1"> 
 -->
-<button type="submit" name="guardarCambios"> Guardar Cambios </button>
+</div>
 
-<button type="submit" name="cancelar" formaction="administrar.php"> Cancelar </button>
+<div class="row g-sm-2">
+    <br>
+    <br>
+<button class="btn btn-primary" type="submit" name="guardarCambios"> Guardar Cambios </button>
 
+<button class="btn btn-success" type="submit" name="cancelar" formaction="administrar.php"> Cancelar </button>
+</div>
 
 </form>
+
+</div>
+
+<div class="col"> </div>
+
 
 <?php
 if(array_key_exists('guardarCambios', $_POST)) {
