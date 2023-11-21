@@ -3,9 +3,7 @@
 // 1) Conexion
 // a) realizar la conexion con la bbdd
 // b) seleccionar la base de datos a usar
-$conexion = mysqli_connect("127.0.0.1", "root", "");
-mysqli_select_db($conexion, "gabitas");
-
+include('conexion.php');
 // 2) Almacenamos los datos del envío GET
 // a) generar variables para el id a utilizar
 $id = $_GET["id"];

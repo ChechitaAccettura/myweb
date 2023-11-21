@@ -37,8 +37,7 @@ if (isset($_SESSION['usuario'])) {
 
 /*  ---CONEXION CON LA BASE DE DATOS--- */
 
-    $conexion = mysqli_connect("127.0.0.1", "root", "");
-    mysqli_select_db($conexion, "gabitas");
+    include('conexion.php');
 
     $consulta='SELECT * FROM tiendagabita';
 

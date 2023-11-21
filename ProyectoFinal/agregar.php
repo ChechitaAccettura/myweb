@@ -1,7 +1,6 @@
 <?php
 
-$conexion=mysqli_connect("127.0.0.1", "root", "");
-mysqli_select_db($conexion, "gabitas");
+include('conexion.php');
 
 $producto = $_POST['producto'];
 $categoria = $_POST['categoria'];

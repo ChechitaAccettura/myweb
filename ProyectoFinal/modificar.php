@@ -1,17 +1,16 @@
 <?php
-$conexion=mysqli_connect("127.0.0.1", "root", "");
-mysqli_select_db($conexion, "gabitas");
-$id=$_GET["id"];
+    include('conexion.php');
+    $id=$_GET["id"];
 
-$consulta="SELECT * FROM tiendagabita WHERE id=$id";
-$respuesta=mysqli_query($conexion, $consulta);
+    $consulta="SELECT * FROM tiendagabita WHERE id=$id";
+    $respuesta=mysqli_query($conexion, $consulta);
 
-$datos=mysqli_fetch_array($respuesta);
-$producto=$datos['producto'];
-$categoria=$datos['categoria'];
-$size_=$datos['size_'];
-$precio=$datos['precio'];
-$imagen_1=$datos['imagen_1'];
+    $datos=mysqli_fetch_array($respuesta);
+    $producto=$datos['producto'];
+    $categoria=$datos['categoria'];
+    $size_=$datos['size_'];
+    $precio=$datos['precio'];
+    $imagen_1=$datos['imagen_1'];
 
 ?>
 

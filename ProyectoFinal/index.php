@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keyword" content="#gabitas #gabitas%20world #gabita's #gabita's%20world #crochet #tejido #amigurumis">
+    <meta name="keyword" content="#gabitas #gabitas%20world #gabita's #gabita's%20world #crochet #tejido #tejer #amigurumis #hecho%20a%20mano #lana #hilo #artesanal #regalo #regalo%20artesanal #gabriela #gabriela%20lazzurri #lazzurri">
     <script src="https://kit.fontawesome.com/020c2b5f5e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
@@ -14,10 +14,7 @@
 <?php
 
 /*  ---CONEXION CON LA BASE DE DATOS--- */
-
-    $conexion = mysqli_connect("127.0.0.1", "root", "");
-    mysqli_select_db($conexion, "gabitas");
-
+    include('conexion.php');
     $consulta='SELECT * FROM tiendagabita';
 
     $datos= mysqli_query($conexion, $consulta);

@@ -2,8 +2,7 @@
 // 1) Conexion
 // a) realizar la conexion con la bbdd
 // b) seleccionar la base de datos a usar
-$conexion = mysqli_connect("127.0.0.1", "root", "");
-mysqli_select_db($conexion, "gabitas");
+include('conexion.php');
 
 // 2) Almacenamos los datos del envío GET
 // a) generar variables para el id a utilizar
@@ -40,7 +39,7 @@ $registro=mysqli_fetch_array($datos);
             <p class="headerP"><img class="imagenCarousel col" src="assets/ovillo.png" alt="ovillo"> Tutoriales</p>
         </div>
         <div class="carousel-item">
-                        <p class="headerP"> <img class="imagenCarousel" src="assets/heartwool.png" alt="heartwool"> Amigurumis </p>
+            <p class="headerP"> <img class="imagenCarousel" src="assets/heartwool.png" alt="heartwool"> Amigurumis </p>
         </div>
         <div class="carousel-item">
             <p class="headerP"><img class="imagenCarousel" src="assets/tshirt.png" alt="tshirt"> Prendas </p>
@@ -83,12 +82,29 @@ $registro=mysqli_fetch_array($datos);
 </nav>
 </header>
 
-<div class="card mb-3" style="width: 99%;">
+<div class="card mb-3" style="width: 99%; min-height: 60vh;">
     <div class="row g-0">
     <div class="col-md">
     </div>
         <div class="col-md">
-        <img  class="img-fluid" src="data:image/png;base64,<?php echo base64_encode($registro['imagen_1'])?>" alt="img" width="250px" height="250px">
+        <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img  class="img-fluid" src="data:image/png;base64,<?php echo base64_encode($registro['imagen_1'])?>" alt="img" width="250px" height="250px">
+            </div>
+            <div class="carousel-item">
+                <img  class="img-fluid" src="data:image/png;base64,<?php echo base64_encode($registro['imagen_2'])?>" alt="img" width="250px" height="250px">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+        </div>
         </div>
         <div class="col-md">
             <div class="card-body">

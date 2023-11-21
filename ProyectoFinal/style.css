@@ -5,14 +5,8 @@
     align-items: center;
 }
 
-body {
-    background-color:  #daaeae;
-}
-
 header, footer {
     background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwCymFsoaPMYS1jHOKRRQhtX3reE5J6jq5PA&usqp=CAU);
-    background-size: cover;
-
 }
 
 .header_2 {
@@ -74,7 +68,6 @@ header, footer {
     width: 100%;
     align-self: center;
     justify-self: center;
-
 }
 
 .modifica {
