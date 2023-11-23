@@ -14,10 +14,10 @@
 <?php
 
 /*  ---CONEXION CON LA BASE DE DATOS--- */
-    include('conexion.php');
-    $consulta='SELECT * FROM tiendagabita';
+include('conexion.php');
+$consulta='SELECT * FROM tiendagabita';
 
-    $datos= mysqli_query($conexion, $consulta);
+$datos= mysqli_query($conexion, $consulta);
 ?>
 <header> 
 
@@ -67,6 +67,8 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a href="login.html" class="dropdown-item" target="_blank" type="button">Acceso a Administradores</a></li>
+                        <li><a href="acercade.html" class="dropdown-item" target="_blank" type="button">Sobre Gabita</a></li>
+
                     </ul>
                 </li>
             </ul>
