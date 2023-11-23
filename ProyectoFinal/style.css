@@ -7,6 +7,8 @@
 
 header, footer {
     background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwCymFsoaPMYS1jHOKRRQhtX3reE5J6jq5PA&usqp=CAU);
+    background-size: cover;
+
 }
 
 .header_2 {

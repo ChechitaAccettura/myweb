@@ -91,6 +91,8 @@ if (isset($_SESSION['usuario'])) {
                     </a>
                     <ul class="dropdown-menu">
                         <li><a href="login.html" class="dropdown-item" target="_blank" type="button">Acceso a Administradores</a></li>
+                        <li><a href="acercade.html" class="dropdown-item" target="_blank" type="button">Sobre Gabita</a></li>
+
                     </ul>
                 </li>
             </ul>
@@ -100,8 +102,11 @@ if (isset($_SESSION['usuario'])) {
 
 </header>
 
-<div class="container-fluid header_2">
-    <h5> Modificá tus productos aquí <i class="fa-solid fa-floppy-disk"></i></h5>
+<div class="container-fluid header_2 row">
+    <h5 class="col-md"> Modificá tus productos aquí <i class="fa-solid fa-floppy-disk"></i></h5>
+    <div class="col-md"></div>
+    <div class="col-md"></div>
+    <a type="button" class="btn btn-info col-md" href="agregar.html"> Producto Nuevo</a>
 </div>
 
 <div class="container"> 
